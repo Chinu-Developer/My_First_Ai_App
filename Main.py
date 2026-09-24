@@ -7,6 +7,11 @@ import time
 load_dotenv()
 
 client = genai.Client()
+st.set_page_config(
+    page_title="J travels",
+    page_icon="🚀",  # Accepts an emoji, URL, or PIL Image
+    layout="wide"
+)
 #st.title("Travle Assistant")
 st.markdown(
     """
@@ -85,7 +90,7 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
-st.caption("Appka Appna Planner")
+st.caption("APPKA Appna Planner")
 
 Location = st.text_input("Where do you want to go Dudee ")
 days_no = st.number_input("How many days of trip do you want ", min_value=1 , max_value=40)
