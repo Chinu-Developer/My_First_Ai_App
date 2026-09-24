@@ -92,23 +92,26 @@ st.markdown(
 )
 st.caption("APPKA APPNA PLANNER")
 
-Location = st.text_input("Where do you want to go Dudee ")
+Location_1 = st.text_input("Where do you want to go Dudee (Your Present City )")
+Destiny   = st.text_input("Where Do you want to go (Desired Destination)")
 days_no = st.number_input("How many days of trip do you want ", min_value=1 , max_value=40)
 
 
 budget = st.selectbox("Select Buddget", ["Premium","Standard","Classic"])
 travel_type = st.radio("Who are you travelling with ", ["Family", "With Friends" , "Solo"])
 Food_type = st.selectbox("Select Your Food Preference  ",["Choose Your Food  Type", "Vegetarian  Food ", "Non-Vegetarian Food" , "Both Of The Choices"])
+Destnation = st.selectbox("Select Your Location",["Domestic","International"])
 Sorry_mess = ("The type of service is not available , We will come with asolution shortly  ")
 
 
-prompt = f""" You are a travel planner if your client wants to go {Location} and for {days_no} days  in the world , 
+prompt = f""" You are a travel planner if your client wants to go {Location_1} to {Destiny} to desired location and for {days_no} days  in the world ,
+ Your client will give you his type of destination {Destnation} According to clients specifation , 
 plan their trip ans share the answer in bulett format  User is saying he is on the budest{budget}  & they are travelling as 
 Travel_Type : {travel_type} 
 If the user enters their Particular Preference about Food{Food_type} if that particular foof type exists in that 
 Particular arear Guve them that recommendation or simply say Sorry that particular type is not available 
 If{Food_type} is not available then type this message {Sorry_mess} 
- ,
+ , also give them a estimated amount of money which they wil require on their trip 
    also give them a helpful tip about their loaction and say enjoy Your stay along with tips   """
 if st.button("Plan Trip"):
     interaction = client.interactions.create(
