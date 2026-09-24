@@ -90,7 +90,7 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
-st.caption("APPKA Appna Planner")
+st.caption("APPKA APPNA PLANNER")
 
 Location = st.text_input("Where do you want to go Dudee ")
 days_no = st.number_input("How many days of trip do you want ", min_value=1 , max_value=40)
