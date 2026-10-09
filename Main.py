@@ -98,14 +98,17 @@ days_no = st.number_input("How many days of trip do you want ", min_value=1 , ma
 
 
 budget = st.selectbox("Select Buddget", ["Premium","Standard","Classic"])
+Destnation = st.selectbox("Select Your Location",["Domestic","International"])
+Visa = st.selectbox("Select Your Option",["Destination having Visa ", "Destination Not consisting Of Visa "])
 travel_type = st.radio("Who are you travelling with ", ["Family", "With Friends" , "Solo"])
 Food_type = st.selectbox("Select Your Food Preference  ",["Choose Your Food  Type", "Vegetarian  Food ", "Non-Vegetarian Food" , "Both Of The Choices"])
-Destnation = st.selectbox("Select Your Location",["Domestic","International"])
 Sorry_mess = ("The type of service is not available , We will come with asolution shortly  ")
 
 
 prompt = f""" You are a travel planner if your client wants to go {Location_1} to {Destiny} to desired location and for {days_no} days  in the world ,
- Your client will give you his type of destination {Destnation} According to clients specifation , 
+ Your client will give you his type of destination {Destnation} According to clients specifation ,
+ also tell the user is their loaction consist of{Visa} or tell that this location is visa free only is the user selects the {Destnation}
+ in that internation option   
 plan their trip ans share the answer in bulett format  User is saying he is on the budest{budget}  & they are travelling as 
 Travel_Type : {travel_type} 
 If the user enters their Particular Preference about Food{Food_type} if that particular foof type exists in that 
