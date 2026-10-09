@@ -92,6 +92,11 @@ st.markdown(
 )
 st.caption("APPKA APPNA PLANNER")
 
+
+
+Name = st.text_input("Enter Your Name ")
+Age = st.text_input("Enter Your age ")
+Gender = st.select_slider("Select Your Gender",["Male","Female","Prefer Not to say "])
 Location_1 = st.text_input("Where do you want to go Dudee (Your Present City )")
 Destiny   = st.text_input("Where Do you want to go (Desired Destination)")
 days_no = st.number_input("How many days of trip do you want ", min_value=1 , max_value=40)
